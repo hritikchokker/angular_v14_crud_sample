@@ -1,0 +1,25 @@
+<div class="task_form_wrapper" [formGroup]="tasksForm">
+  <div class="form_field">
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div class="form_field">
+    <label>Author's Name</label>
+    <input type="text" formControlName="author" />
+  </div>
+  <div class="form_field">
+    <label>Message</label>
+    <textarea
+      formControlName="message"
+      name=""
+      id=""
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+  <div class="form_field">
+    <button>
+      {{ !param ? "Add" : "Edit" }}
+    </button>
+  </div>
+</div>

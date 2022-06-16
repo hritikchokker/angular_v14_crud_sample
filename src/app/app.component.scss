@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
