@@ -1,7 +1,20 @@
-<div class="container">
-  <div>
-    <button routerLink="create">create task</button>
+<div class="search_container">
+  <app-search-field
+    (searchResult)="filterData($event)"
+    class="search_input"
+  ></app-search-field>
+</div>
+<div *ngIf="taskList$ | async as tasksList">
+  <!-- *ngIf="tasksList && tasksList.length" -->
+  <div class="task_list_container">
+    <ng-container *ngFor="let task of tasksList">
+      <app-task-card [taskPayload]="task"></app-task-card>
+    </ng-container>
   </div>
 </div>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <div>
+    <button routerLink="/tasks/create">create task</button>
+  </div>
+</div>

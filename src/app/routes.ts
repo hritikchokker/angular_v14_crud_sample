@@ -9,10 +9,20 @@ export const routes: Routes = [
   {
     path: 'tasks',
     loadComponent: () =>
-      import('./tasks-list/tasks-list.component').then(
-        (c) => c.TasksListComponent
-      ),
+      import('./tasks/tasks.component').then((c) => c.TasksComponent),
     children: [
+      {
+        path: '',
+        redirectTo: 'list',
+        pathMatch: 'full',
+      },
+      {
+        path: 'list',
+        loadComponent: () =>
+          import('./tasks-list/tasks-list.component').then(
+            (c) => c.TasksListComponent
+          ),
+      },
       {
         path: 'create',
         loadComponent: () =>

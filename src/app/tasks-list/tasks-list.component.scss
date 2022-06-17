@@ -1,0 +1,16 @@
+.task_list_container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  // justify-content: space-between;
+}
+
+.search_container {
+  :host {
+    input {
+      width: 100%;
+    }
+  }
+}
